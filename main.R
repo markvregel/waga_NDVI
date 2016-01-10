@@ -2,6 +2,7 @@
 # Mark ten Vregelaar and Jos Goris
 # 8 January 2016
 # This script results in 4 maps: RGB ls 5, RGB ls 8, NDVI ls 5 and ls8 and NDVI differnce in new window
+# It rites the ouputs to the output file
 
 # Start with empty environment
 rm(list=ls())
@@ -71,7 +72,7 @@ ndvils8_cr<-crop(ndvils8,bbox(difference),filename="./output/NDVI_ls8.grd", data
 levelplot(stack(ndvils5_cr, ndvils8_cr), col.regions = colorRampPalette(c("red",'yellow', "green"))(255),colorkey = list(space = "bottom"), 
 					labels = 'NDVI',names.attr=c('Landsat 5 1990' ,'Landsat 8 2014'),main='NDVI Wageningen',scales=list(draw=FALSE))
 
-# Plot the NDVI difference between 2014 and 1990
+# Plot the NDVI difference between 2014 and 1990 in new window
 dev.new()# new graph device
 arg <- list(at=c(-0.5,0,0.5), labels=c("-0.5","0"," 0.5"))
 plot(difference,axes=T,main= 'NDVI difference wageningen between 2014 and 1990',col= colorRampPalette(c("green",'black', "red"))(255), 
