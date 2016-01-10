@@ -2,7 +2,7 @@
 # Mark ten Vregelaar and Jos Goris
 # 8 January 2016
 # This script results in 4 maps: RGB ls 5, RGB ls 8, NDVI ls 5 and ls8 and NDVI differnce in new window
-# It rites the ouputs to the output file
+# It writes the ouputs to the output file
 
 # Start with empty environment
 rm(list=ls())
